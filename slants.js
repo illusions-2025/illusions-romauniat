@@ -47,14 +47,18 @@ function drawCircles(stillColour){
     let yPos = 100;
     
     // change the fill colour using % from back to white
-    let fillColour = [255,0]; // (white,black)
+     //let fillColour = [255,0]; // (white,black)
+     let cColour = 0;
 
     //Draw grid of circles
     for( let i=0; i<16; i++){
         for(let j = 0; j<6; j++){
-            stroke(fillColour[i%2]); // 
-            fill(fillColour[i%2]); // fill a back/ white circle
+            stroke(cColour%2*255); // 
+            fill(cColour%2*255); 
+            //stroke(fillColour[i%2]); // dont use i, use another variable
+            //fill(fillColour[i%2]); // fill a back/ white circle
             ellipse(xPos+i*cSize, yPos +j*(cSize+yGap) ,cSize, cSize);
+            cColour++;
         } 
     }
     
@@ -70,19 +74,20 @@ function drawLines(stillColour){
     let cSize = lineWidth/16; // 50
     let xPos = offset + cSize; // starting xpos
     let yPos = 100;
+    let r = 0;
     
     //Draw grid of rectangles
     for( let i=0; i<15; i++){
         for(let j = 0; j<6; j++){
-            stroke(0); // to have a black circle
-            fill(0); // 
+            stroke(r%2*255); // to have a black/white circle
+            fill(r%2*255); // 
             // top rect
             rect(xPos+i*cSize, yPos +j*(cSize+yGap) - cSize/2 ,cSize/2, 5);
             // bottom rect
-            stroke(255); // to have a black outline
-            fill(255); // fill a white circle
+            stroke((r+1)%2*255); //draw the opposite colour as above
+            fill((r+1)%2*255); 
             rect(xPos+i*cSize, yPos +j*(cSize+yGap) + cSize/2 ,cSize/2, 5);
-
+            r++;
         } 
     }
         
