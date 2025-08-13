@@ -76,7 +76,7 @@ function drawLines(stillColour){
     let cSize = lineWidth/16; // 50
     let xPos = offset + cSize; // starting xpos
     let yPos = 100;
-    let r = 0;
+    let r = stillColour;
     
     //Draw grid of rectangles
     for(let j = 0; j<6; j++){
@@ -89,7 +89,7 @@ function drawLines(stillColour){
             stroke((r+1)%2*255); //draw the opposite colour as above
             fill((r+1)%2*255); 
             rect(xPos+i*cSize, yPos +j*(cSize+yGap) + cSize/2 ,cSize/2, 5);
-            r=r+1;
+            if(!stillColour)    {cColour++;}
         } 
     }
         
