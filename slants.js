@@ -39,6 +39,8 @@ function setup() {
 //but not both (ie no illusion)
 function drawCircles(stillColour){
 ellipse(100,100,50,50);
+ellipse(200,100,50,50);
+
 }
 
 //if stillColour is truthy, image will be black or white
