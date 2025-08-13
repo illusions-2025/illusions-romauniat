@@ -49,6 +49,7 @@ function drawCircles(stillColour){
     // change the fill colour using % from back to white
      //let fillColour = [255,0]; // (white,black)
      let cColour = 0;
+     //colour = stillColour; // ASK where colour is declared???
 
     //Draw grid of circles
     for( let j=0; j<6; j++){
@@ -58,7 +59,8 @@ function drawCircles(stillColour){
             //stroke(fillColour[i%2]); // dont use i, use another variable
             //fill(fillColour[i%2]); // fill a back/ white circle
             ellipse(xPos+i*cSize, yPos +j*(cSize+yGap) ,cSize, cSize);
-            cColour++;
+            if(!stillColour)
+                {cColour++;}
         } 
     }
     
