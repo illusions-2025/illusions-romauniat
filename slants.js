@@ -52,8 +52,8 @@ function drawCircles(stillColour){
     //Draw grid of circles
     for( let i=0; i<16; i++){
         for(let j = 0; j<6; j++){
-            stroke(fillColour(i%2)); // 
-            fill(fillColour(i%2)); // fill a back/ white circle
+            stroke(fillColour[i%2]); // 
+            fill(fillColour[i%2]); // fill a back/ white circle
             ellipse(xPos+i*cSize, yPos +j*(cSize+yGap) ,cSize, cSize);
         } 
     }
@@ -64,7 +64,7 @@ function drawCircles(stillColour){
 //if stillColour is truthy, image will be black or white
 //but not both (ie no illusion)
 function drawLines(stillColour){
-    let yGap = 20;
+    /*let yGap = 20;
     let offset = 100;
     let lineWidth = width - 2*offset;
     let cSize = lineWidth/16; // 50
@@ -83,7 +83,9 @@ function drawLines(stillColour){
 
         } 
     }
+        */
 }
+
 //this function is called once every 60 seconds unless
 //the noLoop() function is called
 //if we were just creating an illusion I would recommend putting in a noLoop()
@@ -94,6 +96,6 @@ function draw() {
     background(150)
     c = int(colourMode.value()); // This takes the value from radio buttons and converts to int.
     drawCircles(c);
-    //drawLines(c);
+    drawLines(c);
     //noLoop();
 }
