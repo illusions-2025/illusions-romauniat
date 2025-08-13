@@ -48,7 +48,7 @@ function drawCircles(stillColour){
     
     // change the fill colour using % from back to white
      //let fillColour = [255,0]; // (white,black)
-     let cColour = 0;
+     let cColour = stillColour;
      //colour = stillColour; // ASK where colour is declared???
 
     //Draw grid of circles
