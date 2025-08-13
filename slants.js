@@ -51,8 +51,8 @@ function drawCircles(stillColour){
      let cColour = 0;
 
     //Draw grid of circles
-    for( let i=0; i<16; i++){
-        for(let j = 0; j<6; j++){
+    for( let j=0; j<6; j++){
+        for( let i=0; i<16; i++){
             stroke(cColour%2*255); // 
             fill(cColour%2*255); 
             //stroke(fillColour[i%2]); // dont use i, use another variable
@@ -77,8 +77,8 @@ function drawLines(stillColour){
     let r = 0;
     
     //Draw grid of rectangles
-    for( let i=0; i<15; i++){
-        for(let j = 0; j<6; j++){
+    for(let j = 0; j<6; j++){
+        for( let i=0; i<15; i++){
             stroke(r%2*255); // to have a black/white circle
             fill(r%2*255); // 
             // top rect
@@ -87,7 +87,7 @@ function drawLines(stillColour){
             stroke((r+1)%2*255); //draw the opposite colour as above
             fill((r+1)%2*255); 
             rect(xPos+i*cSize, yPos +j*(cSize+yGap) + cSize/2 ,cSize/2, 5);
-            r++;
+            r=r+1;
         } 
     }
         
