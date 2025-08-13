@@ -42,26 +42,47 @@ function drawCircles(stillColour){
     let yGap = 20;
     let offset = 100;
     let lineWidth = width - 2*offset;
-    let cSize = lineWidth/16;
+    let cSize = lineWidth/16; // 50
     let xPos = offset + cSize/2;
     let yPos = 100;
     
-    //Calculate the size of each circle, and spacing between with 900px and 16 circles
+    // change the fill colour using % from back to white
+    let fillColour = [255,0]; // (white,black)
+
+    //Draw grid of circles
     for( let i=0; i<16; i++){
         for(let j = 0; j<6; j++){
-            stroke(0); // to have a black outline
-            fill(0); // fill a white circle
+            stroke(fillColour(i%2)); // 
+            fill(fillColour(i%2)); // fill a back/ white circle
             ellipse(xPos+i*cSize, yPos +j*(cSize+yGap) ,cSize, cSize);
         } 
     }
     
-    //ellipse(xPos+cSize, yPos,cSize, cSize);
+
 }
 
 //if stillColour is truthy, image will be black or white
 //but not both (ie no illusion)
 function drawLines(stillColour){
+    let yGap = 20;
+    let offset = 100;
+    let lineWidth = width - 2*offset;
+    let cSize = lineWidth/16; // 50
+    let xPos = offset + cSize/2;
+    let yPos = 100;
+    
+    //Draw grid of rectangles
+    for( let i=0; i<15; i++){
+        for(let j = 0; j<6; j++){
+            stroke(0); // to have a black outline
+            fill(0); // fill a white circle
+            // top rect
+            rect(cSize/2+ xPos+i*cSize, yPos +j*(cSize+yGap) - cSize/2 ,cSize/2, 5);
+            // bottom rect
+            rect(cSize/2+ xPos+i*cSize, yPos +j*(cSize+yGap) + cSize/2 ,cSize/2, 5);
 
+        } 
+    }
 }
 //this function is called once every 60 seconds unless
 //the noLoop() function is called
@@ -73,6 +94,6 @@ function draw() {
     background(150)
     c = int(colourMode.value()); // This takes the value from radio buttons and converts to int.
     drawCircles(c);
-    drawLines(c);
+    //drawLines(c);
     //noLoop();
 }
