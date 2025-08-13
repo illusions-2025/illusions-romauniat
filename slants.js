@@ -5,8 +5,8 @@ let colourMode;
 function setup() {
 
 
-    //create a drawing surface on to the web page
-    //this drawing surface is 1000 X 600
+    //Canvas is used to create a drawing surface on to the web page
+    //this drawing surface is 1000 X 600 pixels
     canvas = createCanvas(1000,600);
 
     //move canvas to make way for radio buttons
@@ -30,15 +30,15 @@ function setup() {
     //to view the position as the centre of the shape
     //thus we need to shift the rec/ellipse modes to
     //refer to centre
-    rectMode(CENTER);
-    ellipseMode(CENTER);
+    rectMode(CENTER); // **** This is very important in illusions!!!***
+    ellipseMode(CENTER); // ** This makes it so the center of what you are positioning is relative to the center **
 
 }
 
 //if stillColour is truthy, image will be black or white
 //but not both (ie no illusion)
 function drawCircles(stillColour){
-
+ellipse(100,100,50,50);
 }
 
 //if stillColour is truthy, image will be black or white
@@ -54,7 +54,7 @@ function drawLines(stillColour){
 //so that the illusion can be redrawn correctly after user input interaction
 function draw() {
     background(150)
-    c = int(colourMode.value());
+    c = int(colourMode.value()); // This takes the value from radio buttons and converts to int.
     drawCircles(c);
     drawLines(c);
     //noLoop();

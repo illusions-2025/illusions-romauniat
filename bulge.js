@@ -1,11 +1,12 @@
 
 let drawGridCheckBox;
-let drawDotsCheckBox;
+let drawDotsCheckBox; // These are used to store the checkboxes
 //this function is called once at the start of a sketch
 function setup() {
 
 
-    //create a drawing surface on to the web page
+    //create a drawing surface on to the web page. 
+    //Canvas is an object to add a drawing surface in a webpage.
     canvas = createCanvas(900,900);
     canvas.position(20,20);
 
