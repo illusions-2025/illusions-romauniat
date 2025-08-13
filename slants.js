@@ -43,7 +43,7 @@ function drawCircles(stillColour){
     let offset = 100;
     let lineWidth = width - 2*offset;
     let cSize = lineWidth/16; // 50
-    let xPos = offset + cSize/2;
+    let xPos = offset + cSize/2; // starting xpos for circle
     let yPos = 100;
     
     // change the fill colour using % from back to white
@@ -64,26 +64,28 @@ function drawCircles(stillColour){
 //if stillColour is truthy, image will be black or white
 //but not both (ie no illusion)
 function drawLines(stillColour){
-    /*let yGap = 20;
+    let yGap = 20;
     let offset = 100;
     let lineWidth = width - 2*offset;
     let cSize = lineWidth/16; // 50
-    let xPos = offset + cSize/2;
+    let xPos = offset + cSize; // starting xpos
     let yPos = 100;
     
     //Draw grid of rectangles
     for( let i=0; i<15; i++){
         for(let j = 0; j<6; j++){
-            stroke(0); // to have a black outline
-            fill(0); // fill a white circle
+            stroke(0); // to have a black circle
+            fill(0); // 
             // top rect
-            rect(cSize/2+ xPos+i*cSize, yPos +j*(cSize+yGap) - cSize/2 ,cSize/2, 5);
+            rect(xPos+i*cSize, yPos +j*(cSize+yGap) - cSize/2 ,cSize/2, 5);
             // bottom rect
-            rect(cSize/2+ xPos+i*cSize, yPos +j*(cSize+yGap) + cSize/2 ,cSize/2, 5);
+            stroke(255); // to have a black outline
+            fill(255); // fill a white circle
+            rect(xPos+i*cSize, yPos +j*(cSize+yGap) + cSize/2 ,cSize/2, 5);
 
         } 
     }
-        */
+        
 }
 
 //this function is called once every 60 seconds unless
