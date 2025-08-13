@@ -39,7 +39,7 @@ function setup() {
 //but not both (ie no illusion)
 function drawCircles(stillColour){
 
-    let gap = 10;
+    let yGap = 20;
     let offset = 100;
     let lineWidth = width - 2*offset;
     let cSize = lineWidth/16;
@@ -48,11 +48,13 @@ function drawCircles(stillColour){
     
     //Calculate the size of each circle, and spacing between with 900px and 16 circles
     for( let i=0; i<16; i++){
-        stroke(0); // to have a black outline
-        fill(0); // fill a white circle
-        ellipse(xPos+i*cSize, yPos,cSize, cSize);
-    } 
-
+        for(let j = 0; j<6; j++){
+            stroke(0); // to have a black outline
+            fill(0); // fill a white circle
+            ellipse(xPos+i*cSize, yPos +j*(cSize+yGap) ,cSize, cSize);
+        } 
+    }
+    
     //ellipse(xPos+cSize, yPos,cSize, cSize);
 }
 
