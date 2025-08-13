@@ -89,7 +89,8 @@ function drawLines(stillColour){
             stroke((r+1)%2*255); //draw the opposite colour as above
             fill((r+1)%2*255); 
             rect(xPos+i*cSize, yPos +j*(cSize+yGap) + cSize/2 ,cSize/2, 5);
-            if(!stillColour)    {cColour++;}
+            
+            if(!stillColour)    {r++;}
         } 
     }
         
